@@ -40,5 +40,7 @@ public class App {
             }
             
         } while (opcion != 8);
+
+        scanner.close();
     }
 }

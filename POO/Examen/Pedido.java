@@ -16,8 +16,13 @@ public class Pedido {
         this.descuento = 0;       
     }
 
-
     public int getNumeroMesa() { return mesaAsociada.getNumero(); }
+    public Mesa getMesa() { return mesaAsociada; }
+    public LinkedList<Plato> getListaPlatos() { return listaPlatos; }
+    public boolean getCompletado() { return estaCompletado; }
+    public double getPrecioTotal() { return precioTotal; }
+
+
     public void cambiarCompletado() { this.estaCompletado = !this.estaCompletado; }
     public void addPlato(Plato plato) { 
         this.listaPlatos.add(plato); 
@@ -40,7 +45,7 @@ public class Pedido {
 
 
     private double calcularPrecioTotal() {
-        double precioTotal = 0;
+        precioTotal = 0;
 
         for (Plato plato : this.listaPlatos) {
             precioTotal += plato.getPrecio();

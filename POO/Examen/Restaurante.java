@@ -79,7 +79,7 @@ public class Restaurante {
             }
         } while (mesaEncontrada == null);
 
-        LinkedList<Plato> listaPlatosPedidos = new LinkedList<Plato>();
+        LinkedList<Plato> listaPlatosPedidos = new LinkedList<>();
         String codigo;
         boolean terminar = false;
 
