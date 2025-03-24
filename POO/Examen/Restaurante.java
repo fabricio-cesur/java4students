@@ -205,6 +205,45 @@ public class Restaurante {
         }
     }
 
-    
+    public void menuModificarPlato() {
+        Plato plato = this.platoByCodigo();
+        int opcion;
+        do {
+            System.out.println("Qué quieres hacer?:");
+            System.out.println("1. Cambiar código.");
+            System.out.println("2. Cambiar nombre.");
+            System.out.println("3. Cambiar precio.");
+            System.out.println("4. Borrar plato.");
+            System.out.println("5. Salir.");
+            System.out.print("Introduce una opción: ");
+            opcion = sc.nextInt();
+
+            switch (opcion) {
+                case 1 -> {
+                    System.out.print("Introduce el nuevo código: ");
+                    String nuevo_codigo = sc.nextLine();
+                    plato.setCodigo(nuevo_codigo);
+                }
+                case 2 -> {
+                    System.out.print("Introduce el nuevo nombre: ");
+                    String nuevo_nombre = sc.nextLine();
+                    plato.setNombre(nuevo_nombre);
+                }
+                case 3 -> {
+                    System.out.print("Introduce el nuevo precio: ");
+                    Double nuevo_precio = sc.nextDouble();
+                    plato.setPrecio(nuevo_precio);
+                }
+                case 4 -> {
+                    this.cartaPlatos.remove(plato);
+                    System.out.println("Plato borrado correctamente.");
+                }
+                default -> {
+                    System.out.println("No se reconoció la opción.");
+                }
+            }
+
+        } while (opcion != 7);
+    }
 
 }
