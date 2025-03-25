@@ -1,3 +1,4 @@
+import java.util.LinkedList;
 import java.util.Scanner;
 
 public class App {
@@ -6,6 +7,7 @@ public class App {
         int opcion;
 
         Restaurante restaurante = new Restaurante();
+        restaurante.setDatos(Datos.cargarDatos());
 
         do {
             System.out.println("\nMenú de Gestión de Restaurante");
@@ -27,13 +29,15 @@ public class App {
                 case 4 -> restaurante.menuModificarPedido();
                 case 5 -> restaurante.menuModificarPlato();
                 case 6 -> {
-                    //guardarDatos();
+                    LinkedList<Object>[] datos = restaurante.getDatos();
+                    Datos.guardarDatos(datos);
                 }
                 case 7 -> {
-                    //cargarDatos();
+                    LinkedList<?>[] datos = Datos.cargarDatos();
+                    restaurante.setDatos(datos);
                 }
                 case 8 -> {
-                    //guardarDatos();
+                    Datos.guardarDatos(restaurante.getDatos());
                     System.out.println("Saliendo del programa...");
                 }
                 default -> System.out.println("Opción no válida, intente nuevamente.");

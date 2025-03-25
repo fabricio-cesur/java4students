@@ -12,12 +12,10 @@ public class Plato {
 
     }
 
-    public String getCodigo() { return this.codigo; }
-    public String getNombre() { return this.nombre; }
-    public Double getPrecio() { return this.precio; }
-
-    public void setCodigo(String codigo) { this.codigo = codigo; } 
+    public Double getPrecio() {return this.precio;}
+    public String getCodigo() {return this.codigo;}
     public void setNombre(String nombre) { this.nombre = nombre; }
-    public void setPrecio(Double precio) { this.precio = precio; }
+    public void setCodigo(String codigo) { this.codigo = codigo; }
+    public void setPrecio(double precio) { this.precio = precio; }
 
 }
