@@ -7,6 +7,7 @@ public class App {
         int opcion;
 
         Restaurante restaurante = new Restaurante();
+        restaurante.setDatos(Datos.cargarDatos());
 
         do {
             System.out.println("\nMenú de Gestión de Restaurante");
@@ -36,7 +37,7 @@ public class App {
                     restaurante.setDatos(datos);
                 }
                 case 8 -> {
-                    //guardarDatos();
+                    Datos.guardarDatos(restaurante.getDatos());
                     System.out.println("Saliendo del programa...");
                 }
                 default -> System.out.println("Opción no válida, intente nuevamente.");
