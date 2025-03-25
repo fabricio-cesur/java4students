@@ -1,3 +1,4 @@
+import java.util.LinkedList;
 import java.util.Scanner;
 
 public class App {
@@ -25,13 +26,14 @@ public class App {
                 case 2 -> restaurante.registrarPlatoCarta();
                 case 3 -> restaurante.registrarPedido();
                 case 4 -> restaurante.menuModificarPedido();
-                case 5 ->  restaurante.menuModificarPlato();
-                
+                case 5 -> restaurante.menuModificarPlato();
                 case 6 -> {
-                    //guardarDatos();
+                    LinkedList<Object>[] datos = restaurante.getDatos();
+                    Datos.guardarDatos(datos);
                 }
                 case 7 -> {
-                    //cargarDatos();
+                    LinkedList<?>[] datos = Datos.cargarDatos();
+                    restaurante.setDatos(datos);
                 }
                 case 8 -> {
                     //guardarDatos();
